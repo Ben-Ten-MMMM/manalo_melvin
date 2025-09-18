@@ -79,10 +79,10 @@ $config['ENVIRONMENT']             = 'development';
 | WARNING: You MUST set this value!
 |
 */
-$config['base_url'] 				= 'https://manalo-melvin-1.onrender.com/git';
+$config['base_url'] 	= 'https://manalo-melvin-1.onrender.com/git';
 
 /*
-|--------------------------------------------------------------------------
+|-----------------------------------------------    ---------------------------
 | Index File
 |--------------------------------------------------------------------------
 |
