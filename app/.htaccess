@@ -1,6 +1,17 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Kung ang file o directory ay hindi existing, i-redirect sa index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Allow all access
 <IfModule authz_core_module>
-    Require all denied
+    Require all granted
 </IfModule>
 <IfModule !authz_core_module>
-    Deny from all
+    Allow from all
 </IfModule>
