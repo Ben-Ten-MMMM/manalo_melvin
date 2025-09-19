@@ -118,7 +118,6 @@
 
       <input type="submit" value="Update">
     </form>
-    <a href="<?= site_url('user') ?>" class="back-link">← Back to User View</a>
   </div>
 </body>
 </html>
