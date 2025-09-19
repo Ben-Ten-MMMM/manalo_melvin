@@ -7,29 +7,32 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      color: #fff;
     }
 
     .form-container {
-      background: #fff;
+      background: rgba(0, 0, 0, 0.4);
       padding: 40px 35px;
       border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-      width: 350px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      width: 380px;
       text-align: center;
+      backdrop-filter: blur(10px);
     }
 
     h1 {
       margin-bottom: 25px;
-      font-size: 22px;
-      font-weight: 600;
-      color: #333;
+      font-size: 24px;
+      font-weight: bold;
+      color: #00f5d4;
+      text-shadow: 0 0 10px #00f5d4, 0 0 20px #00f5d4;
     }
 
     label {
@@ -37,7 +40,7 @@
       text-align: left;
       margin-bottom: 6px;
       font-weight: 500;
-      color: #444;
+      color: #a7c5eb;
       font-size: 14px;
     }
 
@@ -46,42 +49,50 @@
       width: 100%;
       padding: 12px;
       margin-bottom: 18px;
-      border: 1px solid #ddd;
+      border: none;
       border-radius: 8px;
       font-size: 14px;
       outline: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
       transition: 0.3s ease;
+    }
+
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder {
+      color: #ccc;
     }
 
     input[type="text"]:focus,
     input[type="email"]:focus {
-      border-color: #74b9ff;
-      box-shadow: 0 0 6px rgba(116, 185, 255, 0.5);
+      border: 1px solid #00f5d4;
+      box-shadow: 0 0 6px #00f5d4;
     }
 
     input[type="submit"] {
       width: 100%;
       padding: 12px;
-      background: linear-gradient(135deg, #74b9ff, #0984e3);
+      background: linear-gradient(135deg, #00f5d4, #00bbf9);
       border: none;
-      color: #fff;
+      color: #000;
       font-size: 15px;
       font-weight: bold;
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s ease;
+      box-shadow: 0 0 10px #00f5d4, 0 0 20px #00bbf9;
     }
 
     input[type="submit"]:hover {
-      background: linear-gradient(135deg, #0984e3, #74b9ff);
+      background: linear-gradient(135deg, #00bbf9, #00f5d4);
       transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 0 15px #00f5d4, 0 0 25px #00bbf9;
     }
 
     .back-link {
       display: block;
       margin-top: 15px;
-      color: #0984e3;
+      color: #00f5d4;
       text-decoration: none;
       font-size: 13px;
       transition: 0.3s;
@@ -89,6 +100,7 @@
 
     .back-link:hover {
       text-decoration: underline;
+      color: #00bbf9;
     }
   </style>
 </head>
