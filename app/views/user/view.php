@@ -110,10 +110,10 @@
   </style>
 </head>
 <body>
-  <h1> Welcome to Profile View</h1>
+  <h1> Welcome to PCreate View</h1>
 
   <div style="width: 85%; margin: 0 auto 25px auto; text-align: right;">
-    <a href="<?= site_url('user/create'); ?>" class="create-btn">+ Create New User</a>
+    <a href="<?= site_url('user/create'); ?>" class="create-btn">Create New</a>
   </div>
 
   <table>

@@ -103,7 +103,7 @@
 </head>
 <body>
   <div class="form-container">
-    <h1>Create New User</h1>
+    <h1>Create User</h1>
     <form method="post" action="">
       <label for="username">Username</label>
       <input type="text" name="username" id="username" placeholder="Enter username" required>
