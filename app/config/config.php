@@ -56,7 +56,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 | LavaLust Version
 | -------------------------------------------------------------------
 */
-$config['VERSION']                 = '4.2.4';
+$config['VERSION']                 = '4.2.2';
 
 /*
 | -------------------------------------------------------------------
@@ -79,10 +79,10 @@ $config['ENVIRONMENT']             = 'development';
 | WARNING: You MUST set this value!
 |
 */
-$config['base_url'] 	= 'https://manalo-melvin-1.onrender.com/git';
+$config['base_url'] 				= '';
 
 /*
-|-----------------------------------------------    ---------------------------
+|--------------------------------------------------------------------------
 | Index File
 |--------------------------------------------------------------------------
 |
@@ -90,7 +90,7 @@ $config['base_url'] 	= 'https://manalo-melvin-1.onrender.com/git';
 | variable to blank.
 |
 */
-$config['index_page']               = '';
+$config['index_page']               = 'index.php';
 
 /*
 |--------------------------------------------------------------------------

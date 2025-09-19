@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PCreate</title>
+  <title>User/Update</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -18,13 +18,13 @@
     }
 
     .container {
+      max-width: 450px;
+      width: 100%;
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(15px);
       padding: 35px 45px;
       border-radius: 16px;
       box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
-      width: 370px;
-      text-align: center;
       transition: 0.3s ease;
     }
 
@@ -33,8 +33,9 @@
     }
 
     h1 {
+      text-align: center;
       margin-bottom: 25px;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 600;
       color: #00e6e6;
       text-shadow: 0 0 8px rgba(0,255,255,0.7);
@@ -42,7 +43,6 @@
 
     label {
       display: block;
-      text-align: left;
       margin-bottom: 6px;
       font-weight: 500;
       color: #cce7ff;
@@ -86,37 +86,20 @@
       box-shadow: 0 0 20px #00ffff, 0 0 40px #00e6e6;
       transform: scale(1.03);
     }
-
-    .back-link {
-      display: block;
-      margin-top: 18px;
-      color: #00e6e6;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-
-    .back-link:hover {
-      text-shadow: 0 0 8px #00ffff;
-    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Create New Profile</h1>
-    <form action="" method="post">
-      <label for="user_name">User Name:</label>
-      <input type="text" id="user_name" name="user_name" required>
+  <div class="form-container">
+    <h1>Update User</h1>
+    <form method="post" action="<?= site_url('user/update/'.$user['id']) ?>">
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" value="<?= html_escape($user['username']) ?>" required>
 
-      <label for="age">Age:</label>
-      <input type="number" id="age" name="age" required>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" value="<?= html_escape($user['email']) ?>" required>
 
-      <label for="address">Address:</label>
-      <input type="text" id="address" name="address" required>
-
-      <input type="submit" value="Create Profile">
+      <input type="submit" value="Update">
     </form>
-    <a href="#" class="back-link">← Back</a>
   </div>
 </body>
 </html>

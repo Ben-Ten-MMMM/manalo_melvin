@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PView</title>
+  <title>User View</title>
   <style>
-    body {
+   body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       margin: 0;
@@ -110,28 +110,31 @@
   </style>
 </head>
 <body>
-  <h1>Welcome to PCreate View</h1>
-  <a href="/create" class="create-btn">+ Create New Profile</a>
-  
+  <h1> Welcome to Profile View</h1>
+
+  <div style="width: 85%; margin: 0 auto 25px auto; text-align: right;">
+    <a href="<?= site_url('user/create'); ?>" class="create-btn">+ Create New User</a>
+  </div>
+
   <table>
     <tr>
       <th>ID</th>
-      <th>User Name</th>
-      <th>Age</th>
-      <th>Address</th>
-      <th>Actions</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Action</th>
     </tr>
-    <?php foreach ($data as $item): ?>
-    <tr>
-      <td><?=($item['id']); ?></td>
-      <td><?=($item['user_name']); ?></td>
-      <td><?=($item['age']); ?></td>
-      <td><?=($item['address']); ?></td>
-      <td>
-        <a href="<?=site_url('/edit/' .($item['id'])); ?>">Edit</a> 
-        <a href="<?=site_url('/delete/' .($item['id'])); ?>" onclick="return confirm('Are you sure you want to delete this profile?');">Delete</a>
-      </td>
-    </tr>
+
+    <?php foreach ($users as $user): ?>
+      <tr>
+        <td><?= $user['id']; ?></td>
+        <td><?= $user['username']; ?></td>
+        <td><?= $user['email']; ?></td>
+        <td>
+          <a href="<?= site_url('user/update/'.$user['id']); ?>" class="action-btn edit-btn">Edit</a>
+          <a href="<?= site_url('user/delete/'.$user['id']); ?>" class="action-btn delete-btn"
+             onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+        </td>
+      </tr>
     <?php endforeach; ?>
   </table>
 </body>
