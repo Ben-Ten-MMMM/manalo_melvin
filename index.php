@@ -84,9 +84,4 @@ define('PUBLIC_DIR', $public_folder);
  * ------------------------------------------------------
  */
 require_once SYSTEM_DIR . 'kernel/LavaLust.php';
-session_start();
-if (!isset($_SESSION["username"])) {
-    header("Location: login.php");
-    exit();
-}
 ?>
