@@ -8,102 +8,142 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <style>
   body {
-    background-color: #e8f5e8;
-    background-image: url('assets/images/minsu_logo-removebg-preview.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 300px;
-    background-attachment: fixed;
-    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+  background: linear-gradient(135deg, #0f3d91, #1e90ff);
+  background-attachment: fixed;
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
 
-  .page-title {
-    color: #2d5a2d;
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px #ffffff;
-  }
+/* Page Title */
+.page-title {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
 
-  .create-btn, .search-btn, .edit-btn, .logout-btn {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    transition: 0.3s ease;
-  }
+/* Buttons (shared) */
+.create-btn, .search-btn, .edit-btn, .logout-btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  transition: 0.3s ease;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+}
 
-  .create-btn {
-    background-color: #2d5a2d;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 18px;
-  }
-  .create-btn:hover { background-color: #1e3f1e; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+/* Create Button */
+.create-btn {
+  background-color: #1e90ff;
+  color: white;
+}
+.create-btn:hover {
+  background-color: #0077e6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
 
-  .logout-btn {
-    background-color: #dc3545;
-    color: white;
-    border-radius: 8px;
-    padding: 8px 16px;
-    text-decoration: none;
-  }
-  .logout-btn:hover { background-color: #c82333; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+/* Search Button */
+.search-btn {
+  background-color: #0f62fe;
+  color: white;
+}
+.search-btn:hover {
+  background-color: #0841b8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
 
-  .search-container {
-    background: white;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-  }
-  .search-btn {
-    background-color: #2d5a2d;
-    border: none;
-    border-radius: 8px;
-    color: white;
-  }
-  .search-btn:hover { background-color: #1e3f1e; }
+/* Edit Button */
+.edit-btn {
+  background-color: #1e90ff;
+  color: white;
+  border-radius: 20px;
+  padding: 6px 16px;
+}
+.edit-btn:hover {
+  background-color: #0077e6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
 
-  .profile-table {
-    overflow: hidden;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    margin-top: 20px;
-  }
+/* Delete Button */
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 20px;
+  padding: 6px 16px;
+}
+.delete-btn:hover {
+  background-color: #c82333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
 
-  .table-header {
-    background-color: #145214;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  .table-header th { padding: 14px; border: none; }
+/* Logout Button */
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 8px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.logout-btn:hover {
+  background-color: #c82333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
 
-  .table-body tr:nth-child(odd) { background-color: #dff2df; }
-  .table-body tr:nth-child(even) { background-color: white; }
-  .table-body tr:hover { background-color: #cde9cd !important; cursor: pointer; transition: background-color 0.2s ease; }
+/* Search Container */
+.search-container {
+  background: white;
+  color: #333;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
 
-  .table-body td { padding: 14px; border: none; color: #333; }
+/* Table Styles */
+.profile-table {
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  background: white;
+  color: #333;
+}
 
-  .edit-btn {
-    background-color: #2d5a2d;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 6px 16px;
-  }
-  .edit-btn:hover { background-color: #1e3f1e; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.table-header {
+  background-color: #0f3d91;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.table-header th {
+  padding: 14px;
+  border: none;
+}
 
-  .delete-btn {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 6px 16px;
-  }
-  .delete-btn:hover { background-color: #c82333; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.table-body tr:nth-child(odd) {
+  background-color: #f0f8ff;
+}
+.table-body tr:nth-child(even) {
+  background-color: #ffffff;
+}
+.table-body tr:hover {
+  background-color: #d0e7ff !important;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.table-body td {
+  padding: 14px;
+  border: none;
+  color: #333;
+}
+
 
 </style>
 </head>
