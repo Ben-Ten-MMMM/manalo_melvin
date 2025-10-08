@@ -1,142 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background: linear-gradient(to right, #E8F5E9, #C8E6C9);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><?= $page_title ?? 'Page'; ?></title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Global */
+  body {
+    background: linear-gradient(135deg, #E8F5E9 0%, #D7EFD7 100%);
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
 
-    .login-card {
-      background: #ffffff;
-      border-radius: 16px;
-      border: 1px solid #C8E6C9;
-      box-shadow: 0 10px 25px rgba(0, 128, 0, 0.1);
-      padding: 2rem;
-      width: 100%;
-      max-width: 420px;
-    }
+  .card-container {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #d6e9d6;
+    box-shadow: 0 16px 36px rgba(45, 90, 45, 0.15);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 470px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
 
-    .login-title {
-      color: #2E7D32;
-      font-weight: 700;
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
+  .card-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(45, 90, 45, 0.2);
+  }
 
-    .form-group {
-      margin-bottom: 1.25rem;
-    }
+  h2.page-title {
+    font-family: 'Poppins', sans-serif;
+    color: #2E7D32;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 
-    .form-control,
-    .form-select {
-      border: 2px solid #A5D6A7;
-      border-radius: 10px;
-      background-color: #F1F8F1;
-      padding: 12px 15px;
-      font-size: 1rem;
-      transition: 0.3s;
-    }
+  .form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
 
-    .form-control:focus,
-    .form-select:focus {
-      border-color: #388E3C;
-      background-color: #ffffff;
-      box-shadow: 0 0 0 0.2rem rgba(56, 142, 60, 0.25);
-    }
+  .form-control, .form-select {
+    border: 2px solid #E1F0E1;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    background-color: #F7FBF7;
+    transition: all 0.25s ease;
+  }
 
-    .btn-login {
-      background-color: #388E3C;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      padding: 12px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      width: 100%;
-      box-shadow: 0 6px 18px rgba(56, 142, 60, 0.3);
-      transition: all 0.25s ease;
-    }
+  .form-control:focus, .form-select:focus {
+    border-color: #2D5A2D;
+    box-shadow: 0 0 0 0.2rem rgba(45, 90, 45, 0.2);
+    background-color: #ffffff;
+  }
 
-    .btn-login:hover {
-      background-color: #2E7D32;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(56, 142, 60, 0.4);
-    }
+  .btn-primary {
+    background-color: #2D5A2D;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    box-shadow: 0 6px 16px rgba(45, 90, 45, 0.35);
+    transition: all 0.25s ease;
+  }
 
-    .register-link {
-      text-align: center;
-      margin-top: 1rem;
-      color: #666;
-    }
+  .btn-primary:hover {
+    background-color: #244A24;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(45, 90, 45, 0.45);
+    color: #ffffff;
+  }
 
-    .register-link a {
-      color: #2E7D32;
-      font-weight: 600;
-      text-decoration: none;
-    }
+  .btn-secondary {
+    background-color: transparent;
+    color: #2E7D32;
+    border: 2px solid #2E7D32;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.25s ease;
+  }
 
-    .register-link a:hover {
-      text-decoration: underline;
-      color: #1B5E20;
-    }
+  .btn-secondary:hover {
+    background-color: #2E7D32;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(46, 125, 50, 0.3);
+  }
 
-    .alert {
-      border-radius: 10px;
-      border: 1px solid #C8E6C9;
-    }
-  </style>
+  .alert {
+    border-radius: 10px;
+    border: 1px solid #d6e9d6;
+    margin-bottom: 1rem;
+  }
+
+  .text-center a {
+    color: #2D5A2D;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .text-center a:hover {
+    color: #244A24;
+    text-decoration: underline;
+  }
+
+  .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .logout-btn {
+    background-color: #C62828;
+    color: white;
+    border-radius: 8px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .logout-btn:hover {
+    background-color: #B71C1C;
+    transform: translateY(-1px);
+    color: white;
+  }
+</style>
 </head>
 <body>
-  <div class="login-card">
-    <h2 class="login-title">Login</h2>
 
-    <?php if (isset($_SESSION['error'])): ?>
-      <div class="alert alert-danger" role="alert">
-        <?= html_escape($_SESSION['error']); ?>
-        <?php unset($_SESSION['error']); ?>
-      </div>
-    <?php endif; ?>
+<div class="card-container">
+  <?php if (isset($page_title)) echo "<h2 class='page-title'>{$page_title}</h2>"; ?>
 
-    <form action="<?= site_url('auth/login'); ?>" method="post">
-      <div class="form-group">
-        <label class="form-label">Role</label>
-        <select class="form-select" name="role" required>
-          <option value="" selected disabled>Select</option>
-          <option value="user">User</option>
-          <option value="admin">Admin</option>
-        </select>
-      </div>
+  <?php if (isset($_SESSION['error'])): ?>
+    <div class="alert alert-danger"><?= html_escape($_SESSION['error']); unset($_SESSION['error']); ?></div>
+  <?php endif; ?>
+  <?php if (isset($_SESSION['success'])): ?>
+    <div class="alert alert-success"><?= html_escape($_SESSION['success']); unset($_SESSION['success']); ?></div>
+  <?php endif; ?>
 
-      <div class="form-group">
-        <input type="text" class="form-control" name="username" placeholder="Username" required>
-      </div>
+  <?= $form_content ?? ''; ?>
 
-      <div class="form-group">
-        <input type="password" class="form-control" name="password" placeholder="Password" required>
-      </div>
-
-      <button type="submit" class="btn btn-login">Login</button>
-    </form>
-
-    <div class="register-link">
-      <a href="<?= site_url('auth/forgot-password'); ?>">Forgot password?</a>
+  <?php if (isset($extra_links) && is_array($extra_links)): ?>
+    <div class="text-center mt-3">
+      <?php foreach ($extra_links as $link_text => $link_url): ?>
+        <div><a href="<?= $link_url ?>"><?= $link_text ?></a></div>
+      <?php endforeach; ?>
     </div>
+  <?php endif; ?>
+</div>
 
-    <div class="register-link">
-      Don't have an account? <a href="<?= site_url('auth/register'); ?>">Register</a>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
