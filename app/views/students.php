@@ -7,7 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
   body {
-    background-color: #e8f5e8;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
     background-image: url('assets/images/minsu_logo-removebg-preview.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -17,16 +17,16 @@
   }
 
   .page-title {
-    color: #2d5a2d;
+    color: #0d47a1;
     font-size: 2.5rem;
     font-weight: bold;
     text-align: center;
     margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px #ffffff;
+    text-shadow: 1px 1px 3px #ffffff;
   }
 
   .create-btn {
-    background-color: #2d5a2d;
+    background: linear-gradient(135deg, #1976d2, #1565c0);
     color: white;
     border: none;
     border-radius: 8px;
@@ -36,13 +36,13 @@
   }
 
   .create-btn:hover {
-    background-color: #1e3f1e;
+    background: linear-gradient(135deg, #0d47a1, #0b3d91);
   }
 
   .profile-table {
     overflow: hidden;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     margin-top: 20px;
   }
 
@@ -52,13 +52,12 @@
     border-collapse: collapse;
   }
 
-  /* ✅ Dark green header */
+  /* ✅ Blue header */
   .table-header {
-    background-color: #145214; /* dark green */
+    background: linear-gradient(135deg, #1565c0, #0d47a1);
     color: white;
     text-transform: uppercase;
     font-weight: bold;
-    transition: 0.3s ease;
   }
 
   .table-header th {
@@ -67,16 +66,15 @@
   }
 
   .table-body tr:nth-child(odd) {
-    background-color: #dff2df; /* light green */
+    background-color: #e3f2fd;
   }
 
   .table-body tr:nth-child(even) {
     background-color: white;
   }
 
-  /* ✅ Hover effect sa rows */
   .table-body tr:hover {
-    background-color: #cde9cd !important;
+    background-color: #bbdefb !important;
     cursor: pointer;
     transition: background-color 0.2s ease;
   }
@@ -88,7 +86,7 @@
   }
 
   .edit-btn {
-    background-color: #2d5a2d;
+    background: linear-gradient(135deg, #1976d2, #1565c0);
     color: white;
     border: none;
     border-radius: 20px;
@@ -98,11 +96,11 @@
   }
 
   .edit-btn:hover {
-    background-color: #1e3f1e;
+    background: linear-gradient(135deg, #0d47a1, #0b3d91);
   }
 
   .delete-btn {
-    background-color: #dc3545;
+    background: linear-gradient(135deg, #e53935, #c62828);
     color: white;
     border: none;
     border-radius: 20px;
@@ -112,11 +110,11 @@
   }
 
   .delete-btn:hover {
-    background-color: #c82333;
+    background: linear-gradient(135deg, #b71c1c, #7f0000);
   }
 
   .logout-btn {
-    background-color: #dc3545;
+    background: linear-gradient(135deg, #e53935, #c62828);
     color: white;
     border-radius: 8px;
     padding: 8px 16px;
@@ -126,7 +124,7 @@
   }
 
   .logout-btn:hover {
-    background-color: #c82333;
+    background: linear-gradient(135deg, #b71c1c, #7f0000);
   }
 
   .search-container {
@@ -138,7 +136,7 @@
   }
 
   .search-btn {
-    background-color: #2d5a2d;
+    background: linear-gradient(135deg, #1976d2, #1565c0);
     border: none;
     border-radius: 8px;
     color: white;
@@ -146,7 +144,7 @@
   }
 
   .search-btn:hover {
-    background-color: #1e3f1e;
+    background: linear-gradient(135deg, #0d47a1, #0b3d91);
   }
 </style>
 

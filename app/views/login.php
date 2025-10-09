@@ -7,7 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(to right, #E8F5E9, #C8E6C9);
+      background: linear-gradient(to right, #E3F2FD, #BBDEFB);
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -18,15 +18,15 @@
     .login-card {
       background: #ffffff;
       border-radius: 16px;
-      border: 1px solid #C8E6C9;
-      box-shadow: 0 10px 25px rgba(0, 128, 0, 0.1);
+      border: 1px solid #BBDEFB;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       padding: 2rem;
       width: 100%;
       max-width: 420px;
     }
 
     .login-title {
-      color: #2E7D32;
+      color: #1565C0;
       font-weight: 700;
       font-size: 2rem;
       text-align: center;
@@ -39,9 +39,9 @@
 
     .form-control,
     .form-select {
-      border: 2px solid #A5D6A7;
+      border: 2px solid #90CAF9;
       border-radius: 10px;
-      background-color: #F1F8F1;
+      background-color: #F3F8FF;
       padding: 12px 15px;
       font-size: 1rem;
       transition: 0.3s;
@@ -49,13 +49,13 @@
 
     .form-control:focus,
     .form-select:focus {
-      border-color: #388E3C;
+      border-color: #1565C0;
       background-color: #ffffff;
-      box-shadow: 0 0 0 0.2rem rgba(56, 142, 60, 0.25);
+      box-shadow: 0 0 0 0.2rem rgba(21, 101, 192, 0.25);
     }
 
     .btn-login {
-      background-color: #388E3C;
+      background-color: #1565C0;
       color: #fff;
       border: none;
       border-radius: 10px;
@@ -63,14 +63,14 @@
       font-size: 1.1rem;
       font-weight: 600;
       width: 100%;
-      box-shadow: 0 6px 18px rgba(56, 142, 60, 0.3);
+      box-shadow: 0 6px 18px rgba(21, 101, 192, 0.3);
       transition: all 0.25s ease;
     }
 
     .btn-login:hover {
-      background-color: #2E7D32;
+      background-color: #0D47A1;
       transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(56, 142, 60, 0.4);
+      box-shadow: 0 10px 25px rgba(21, 101, 192, 0.4);
     }
 
     .register-link {
@@ -80,19 +80,19 @@
     }
 
     .register-link a {
-      color: #2E7D32;
+      color: #1565C0;
       font-weight: 600;
       text-decoration: none;
     }
 
     .register-link a:hover {
       text-decoration: underline;
-      color: #1B5E20;
+      color: #0D47A1;
     }
 
     .alert {
       border-radius: 10px;
-      border: 1px solid #C8E6C9;
+      border: 1px solid #BBDEFB;
     }
   </style>
 </head>

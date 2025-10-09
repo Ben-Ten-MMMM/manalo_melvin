@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Create New User</title>
+  <title>Edit User</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background-color: #E8F5E9;
+      background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 0;
     }
 
     .page-title {
-      color: #2E7D32;
+      color: #1565C0;
       font-size: 2.4rem;
       font-weight: bold;
       margin: 0;
@@ -22,53 +27,53 @@
       background: #ffffff;
       border-radius: 16px;
       padding: 2rem;
-      box-shadow: 0 10px 30px rgba(46, 125, 50, 0.1);
+      box-shadow: 0 10px 30px rgba(21, 101, 192, 0.15);
       max-width: 600px;
-      margin: 2rem auto;
+      width: 100%;
     }
 
     .form-label {
-      color: #2E7D32;
+      color: #1565C0;
       font-weight: 600;
       margin-bottom: 8px;
     }
 
     .form-control {
-      border: 2px solid #C8E6C9;
+      border: 2px solid #BBDEFB;
       border-radius: 10px;
       padding: 12px 15px;
       font-size: 1rem;
-      background-color: #F1F8F1;
+      background-color: #F5FBFF;
       transition: all 0.3s ease;
     }
 
     .form-control:focus {
-      border-color: #2E7D32;
+      border-color: #1565C0;
       background-color: #ffffff;
-      box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+      box-shadow: 0 0 0 0.2rem rgba(21, 101, 192, 0.25);
     }
 
-    .btn-create {
-      background-color: #2E7D32;
+    .btn-update {
+      background: linear-gradient(135deg, #1565C0, #0D47A1);
       color: white;
       border: none;
       border-radius: 10px;
       padding: 12px 30px;
       font-weight: 600;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+      box-shadow: 0 4px 12px rgba(21, 101, 192, 0.3);
     }
 
-    .btn-create:hover {
-      background-color: #1B5E20;
+    .btn-update:hover {
+      background: linear-gradient(135deg, #0D47A1, #08306B);
       transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(27, 94, 32, 0.4);
+      box-shadow: 0 6px 14px rgba(13, 71, 161, 0.4);
     }
 
     .btn-cancel {
       background-color: transparent;
-      color: #2E7D32;
-      border: 2px solid #2E7D32;
+      color: #1565C0;
+      border: 2px solid #1565C0;
       border-radius: 10px;
       padding: 12px 30px;
       font-weight: 600;
@@ -76,10 +81,10 @@
     }
 
     .btn-cancel:hover {
-      background-color: #2E7D32;
+      background-color: #1565C0;
       color: white;
       transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(46, 125, 50, 0.3);
+      box-shadow: 0 6px 14px rgba(21, 101, 192, 0.3);
     }
 
     .logout-btn {
@@ -107,28 +112,28 @@
   </style>
 </head>
 <body>
-  <div class="container py-4">
+  <div class="container">
     <div class="form-container">
       <div class="header-section">
-        <h1 class="page-title">Create New User</h1>
+        <h1 class="page-title">Edit User</h1>
         <a href="<?= site_url('auth/logout'); ?>" class="logout-btn">Logout</a>
       </div>
 
       <form method="post" action="">
         <div class="mb-4">
           <label for="first_name" class="form-label">First Name</label>
-          <input type="text" class="form-control" id="first_name" name="first_name" required />
+          <input type="text" class="form-control" id="first_name" name="first_name" value="<?= html_escape($student['first_name']); ?>" required />
         </div>
         <div class="mb-4">
           <label for="last_name" class="form-label">Last Name</label>
-          <input type="text" class="form-control" id="last_name" name="last_name" required />
+          <input type="text" class="form-control" id="last_name" name="last_name" value="<?= html_escape($student['last_name']); ?>" required />
         </div>
         <div class="mb-4">
           <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="email" required />
+          <input type="email" class="form-control" id="email" name="email" value="<?= html_escape($student['email']); ?>" required />
         </div>
         <div class="d-flex gap-3">
-          <button type="submit" class="btn btn-create">Create User</button>
+          <button type="submit" class="btn btn-update">Update User</button>
           <a href="<?= site_url('author'); ?>" class="btn btn-cancel">Cancel</a>
         </div>
       </form>
